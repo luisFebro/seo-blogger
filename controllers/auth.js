@@ -13,6 +13,7 @@ exports.signup = (req, res) => {
         }
 
         const { name, email, password } = req.body;
+
         let username = shortId.generate();
         let profile = `${process.env.CLIENT_URL}/profile/${username}`;
 
@@ -23,9 +24,7 @@ exports.signup = (req, res) => {
                     error: err
                 });
             }
-            // res.json({
-            //     user: success
-            // });
+
             res.json({
                 message: 'Signup success! Please signin.'
             });

@@ -12,9 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "isomorphic-fetch": "^3.0.0",
     "next": "^9.5.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "reactstrap": "^8.6.0"
-  }
+  },
+  "proxy": "http://localhost:10000"
 }

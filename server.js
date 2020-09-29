@@ -13,16 +13,11 @@ const app = express();
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(cookieParser());
-
+app.use(cors());
 // db
 mongoose
     .connect(process.env.DATABASE, { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false })
     .then(() => console.log('DB connected'));
-
-// cors
-if (process.env.NODE_ENV === 'development') {
-    app.use(cors({ origin: `${process.env.CLIENT_URL}` }));
-}
 
 // routes
 app.get('/api', (req, res) => {
@@ -41,3 +36,12 @@ const port = process.env.PORT || 10000;
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+
+
+
+/*
+cors
+if (process.env.NODE_ENV === 'development') {
+    app.use(cors({ origin: `${process.env.CLIENT_URL}` }));
+}
+*/
