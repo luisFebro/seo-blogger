@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { signin } from '../../actions/auth';
+import { useState, useEffect } from 'react';
+import { signin, authenticate, isAuth } from '../../actions/auth';
 import Router from 'next/router';
 
 const SigninComponent = () => {
@@ -11,6 +11,10 @@ const SigninComponent = () => {
         message: '',
         showForm: true
     });
+
+    useEffect(() => {
+        isAuth() && Router.push("/");
+    }, [])
 
     const { email, password, error, loading, message, showForm } = values;
 
@@ -27,7 +31,13 @@ const SigninComponent = () => {
                 // save user token to cookie
                 // save user info to localstorage
                 // authenticate user
-                Router.push(`/`);
+                authenticate(data, () => {
+                    if (isAuth() && isAuth().role === 1) {
+                        Router.push(`/admin`);
+                    } else {
+                        Router.push(`/user`);
+                    }
+                });
             }
         });
     };

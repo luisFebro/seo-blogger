@@ -27,6 +27,9 @@ app.get('/api', (req, res) => {
 // routes middleware
 app.use('/api', require('./routes/blog'));
 app.use('/api', require('./routes/auth'));
+app.use('/api', require('./routes/user'));
+app.use('/api', require('./routes/category'));
+app.use('/api', require('./routes/tag'));
 
 
 const authRoutes = require('./routes/auth');
