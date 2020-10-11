@@ -29,14 +29,14 @@ const blogSchema = new mongoose.Schema(
             type: String
         },
         mdesc: {
-            type: String
+            type: {}
         },
         photo: {
             data: Buffer,
             contentType: String
         },
-        categories: [{ type: ObjectId, ref: 'Category', required: true }],
-        tags: [{ type: ObjectId, ref: 'Tag', required: true }],
+        categories: [{ type: ObjectId, ref: 'Category'}],
+        tags: [{ type: ObjectId, ref: 'Tag' }],
         postedBy: {
             type: ObjectId,
             ref: 'User'

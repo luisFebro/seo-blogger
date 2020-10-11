@@ -15,6 +15,10 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"
           />
+          <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/react-quill@1.3.3/dist/quill.snow.min.css"
+          />
         </Head>
         <body>
           <Main />
