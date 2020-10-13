@@ -41,6 +41,14 @@ const Header = () => {
           <Nav className="ml-auto" navbar>
             {!isAuth() && (
               <React.Fragment>
+                <React.Fragment>
+                  <NavItem>
+                    <Link href="/blogs">
+                      <NavLink>Blogs</NavLink>
+                    </Link>
+                  </NavItem>
+                </React.Fragment>
+
                 <NavItem>
                   <Link href="/signin">
                     <NavLink>Signin</NavLink>
