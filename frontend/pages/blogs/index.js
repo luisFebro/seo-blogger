@@ -6,7 +6,6 @@ import { listBlogsWithCategoriesAndTags } from '../../actions/blog';
 import Card from '../../components/blog/Card';
 import { API, DOMAIN, APP_NAME, FB_APP_ID } from '../../config';
 import { withRouter } from 'next/router';
-import { API, DOMAIN, APP_NAME, FB_APP_ID } from '../../config';
 
 const Blogs = ({ blogs, categories, tags, totalBlogs, blogsLimit, blogSkip, router }) => {
     const head = () => (
