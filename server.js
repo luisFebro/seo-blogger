@@ -30,6 +30,7 @@ app.use('/api', require('./routes/auth'));
 app.use('/api', require('./routes/user'));
 app.use('/api', require('./routes/category'));
 app.use('/api', require('./routes/tag'));
+app.use('/api', require('./routes/form'));
 
 
 const authRoutes = require('./routes/auth');
