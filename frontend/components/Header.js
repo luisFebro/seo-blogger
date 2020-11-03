@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import Link from 'next/link';
 import { APP_NAME } from '../config';
 import NProgress from 'nprogress';
 import Router from 'next/router';
 import { signout, isAuth } from '../actions/auth';
+import Search from '../components/blog/Search';
 
 Router.onRouteChangeStart = url => NProgress.start();
 Router.onRouteChangeComplete = url => NProgress.done();
@@ -31,7 +32,7 @@ const Header = () => {
   };
 
   return (
-    <div>
+    <Fragment>
       <Navbar color="light" light expand="md">
         <Link href="/">
           <NavLink className="font-weight-bold">{APP_NAME}</NavLink>
@@ -94,7 +95,8 @@ const Header = () => {
           </Nav>
         </Collapse>
       </Navbar>
-    </div>
+      <Search />
+    </Fragment>
   );
 };
 
