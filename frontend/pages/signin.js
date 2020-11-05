@@ -1,10 +1,25 @@
 import Layout from '../components/Layout';
 import SigninComponent from '../components/auth/SigninComponent';
+import { withRouter } from 'next/router';
 
-const Signin = () => {
+const Signin = ({ router }) => {
+    const showRedirectMsg = () => {
+        if(router.query.msg) {
+            return <div className="alert alert-danger"></div>
+        }
+    }
+
     return (
         <Layout>
             <h2 className="text-center pt-4 pb-4">Signin</h2>
+
+            <div className="row">
+                <div className="col-md-6 offset-md-3">
+                    {showRedirectMsg()}
+                </div>
+            </div>
+
+
             <div className="row">
                 <div className="col-md-6 offset-md-3">
                     <SigninComponent />
@@ -14,4 +29,4 @@ const Signin = () => {
     );
 };
 
-export default Signin;
+export default withRouter(Signin);

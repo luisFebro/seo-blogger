@@ -7,6 +7,7 @@ import { API, DOMAIN, APP_NAME, FB_APP_ID } from '../../config';
 import renderHTML from 'react-render-html';
 import SmallCard from '../../components/blog/SmallCard';
 import moment from 'moment';
+import DisqusThread from '../../components/DisqusThread';
 
 const getStyles = () => ({
     featuredImg: {
@@ -130,7 +131,11 @@ const SingleBlog = ({ blog, query }) => {
                         </div>
 
                         <div className="container pb-5">
-                            <p>show comments</p>
+                            <DisqusThread
+                                id={blog.id}
+                                title={blog.title}
+                                path={`/blog/${blog.slug}`}
+                            />
                         </div>
                     </article>
                 </main>
